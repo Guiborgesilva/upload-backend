@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true
 })
 
-app.use(cors({ origin: '*' }))
+app.use(cors({ origin: '*', methods: 'GET, POSTS, DELETE' }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('dev'))
